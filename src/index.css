@@ -1,27 +1,108 @@
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0;
+}
+
 body {
   margin: 0;
-  font-family:Graphik, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Rubik', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h4 i{
+  font-size: 1.2rem;
 }
 
-.app{
-  padding: 0 9.5rem;
+.app-l{
+  padding-left: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.app-r{
+  padding-right: 10%;
+  display: inline-block;
+  align-items: center;
+  width: 40%;
+}
+.start{
+  justify-content: flex-start;
+}
+
+.end{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container{
+  border-bottom: solid 1px #DCDCDC;
+}
+
+.target-details{
+  margin-left: 0.8rem;
+}
+.target-details h4{
+  color: #272727;
+  padding-bottom: 0.4rem;
 }
 
 .watermark{
+  padding-left: 10%;
   color: white;
   height: 7.5vh;
-  display: flex;
-  align-items: center;
   background-color: #2766CC;  
+}
+.watermark img{
+  width: 10px;
+}
+.watermark h5{
+  font-weight: 200;
 }
 
 .soko{
   font-size: 0.8rem;
+}
+
+.target{
+  display: inline-block;
+  width: 50%;  
+}
+
+.target-child{
+  margin: 1.2rem 0;
+}
+
+.sub-text{
+  font-size: 0.7rem;
+}
+
+.store{
+  color:#C7C7C7;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: #F2F2F2;
+}
+
+.user-child img{
+  width: 23px;
+}
+
+.user-child h4{
+  color: #A1A1A1;
+  display: flex;
+}
+
+.user-text-spacing{
+  margin-left: 15%;
+}
+
+.user-icon-spacing{
+  margin-left: 1.2rem;
+  font-weight: 200;
+}
+
+.end h4 span{
+  display: flex;
+  color: #A1A1A1;
 }

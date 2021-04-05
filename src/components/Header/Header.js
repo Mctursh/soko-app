@@ -1,10 +1,14 @@
 import React from "react"
 import Watermark from "./Watermark"
+import Target from "./Target"
 
 
 function Header () {
     return (
-        <Watermark />
+        <div>
+            <Watermark />
+            <Target />
+        </div>
     )
 }
 
