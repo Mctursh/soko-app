@@ -1,10 +1,10 @@
 import React from "react"
-import CategoryItem from "./Category-item"
+import Categories from "./Categories/Categories"
+import Feeds from "./Feeds/Feeds"
 import {useState} from "react"
-import Dummy from "./dummy-items"
 
 
-function Category() {
+function Home() {
 
     const [Activity, setActivity] = useState({
         prev: 1,
@@ -20,10 +20,11 @@ function Category() {
     }
 
     return (
-        <div className="category">
-            {Dummy.map((item) => { return (<CategoryItem key={item._id} itemNumber={item.itemNumber} toggle={toggleItem} itemName={item.name} amount={item.amount}  activity={Activity}/>)})}
+        <div className="flex">            
+            <Categories Activity={Activity} toggleItem={toggleItem}/>
+            <Feeds />
         </div>
     )
 }
 
-export default Category
+export default Home

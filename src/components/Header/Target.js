@@ -5,7 +5,7 @@ import Address from "./Target-address"
 
 function Target() {
     return (
-        <div className="container">
+        <div>
             <Address />
             <UserStatus />
         </div>

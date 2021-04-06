@@ -12,6 +12,13 @@ body {
 h4 i{
   font-size: 1.2rem;
 }
+::placeholder{
+  color: #BCBCBC;
+}
+
+.header{
+  border-bottom: solid 1px #DCDCDC;
+}
 
 .app-l{
   padding-left: 20%;
@@ -32,10 +39,6 @@ h4 i{
 .end{
   display: flex;
   justify-content: flex-end;
-}
-
-.container{
-  border-bottom: solid 1px #DCDCDC;
 }
 
 .target-details{
@@ -95,11 +98,11 @@ h4 i{
 }
 
 .user-text-spacing{
-  margin-left: 15%;
+  margin-left: 9%;
 }
 
 .user-icon-spacing{
-  margin-left: 1.2rem;
+  margin-left: 1.1rem;
   font-weight: 200;
 }
 
@@ -113,9 +116,9 @@ h4 i{
 .category{
   display: inline-block;
   padding-left: 10%;
-  width: 15%;
+  padding-top: 1.3rem;
+  width: 18%;
 }
-
 .category-parent-item-active{
   display: flex;
   justify-content: flex-start;
@@ -138,4 +141,62 @@ h4 i{
   padding: 0.6rem 0;
   font-weight: 200;
   color: #979797;
+}
+
+.category h4 span i{
+  padding-left: 0.8rem;
+}
+
+.view-all{
+  color: #2c6acd;
+  font-weight: 500;
+}
+
+/*********************************SEARCH BAR STYLING*********************************/
+
+.input-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 1.3rem;
+}
+
+.input-group button{
+  padding: 0.74rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: #F8DE4B;
+  background: #F8DE4B;
+}
+
+.input-group button i{
+  font-size: 1rem;
+  color: #5A83AD;
+}
+
+.flex{
+  display: flex;
+}
+
+.feeds{
+  width: 40%;
+  display: inline-block;
+  padding: 0 2%;
+  border-left: solid 1px #DCDCDC;
+  border-right: solid 1px #DCDCDC;
+  padding-top: 1.3rem;
+}
+.form-outline{
+  width: 37%;
+}
+#form1{
+  padding: 0.68rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: #F0F0F0;
+  background: #F0F0F0;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
+  width: 100%;
 }

@@ -1,13 +1,14 @@
 import React from "react"
 import Header from "./Header/Header"
-import Categories from "./Home/Categories"
+import Home from "./Home/Home";
+
 
 
 function App() {
   return (
     <>
     <Header />
-    <Categories />
+    <Home />
     </>
   );
 }
