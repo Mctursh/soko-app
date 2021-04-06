@@ -1,10 +1,14 @@
 import React from "react"
 import Header from "./Header/Header"
+import Categories from "./Home/Categories"
 
 
 function App() {
   return (
+    <>
     <Header />
+    <Categories />
+    </>
   );
 }
 

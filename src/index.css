@@ -74,6 +74,7 @@ h4 i{
 
 .sub-text{
   font-size: 0.7rem;
+  color: #7E7E7E;
 }
 
 .store{
@@ -105,4 +106,36 @@ h4 i{
 .end h4 span{
   display: flex;
   color: #A1A1A1;
+}
+
+
+/*********************************HOME PAGE CATEGORY STYLING****************************************/
+.category{
+  display: inline-block;
+  padding-left: 10%;
+  width: 15%;
+}
+
+.category-parent-item-active{
+  display: flex;
+  justify-content: flex-start;
+  border-right: 4px solid #2766CC;
+  background: linear-gradient(45deg, white , #ebedf3);
+}
+
+.category-child-item-active{
+  padding: 0.6rem 0;
+  font-weight: 200;
+  color: #2766CC;
+}
+
+.category-parent-item-inactive{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.category-child-item-inactive{
+  padding: 0.6rem 0;
+  font-weight: 200;
+  color: #979797;
 }
