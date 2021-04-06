@@ -8,13 +8,15 @@ function Home() {
 
     const [Activity, setActivity] = useState({
         prev: 1,
-        current: 1
+        current: 1,
+        currName: "Electronics",
+        currItem: 12
     })
 
-    const toggleItem = (prev, current) => {
+    const toggleItem = (prev, current, currName, currItem) => {
         setActivity((exValue) => {
             return (
-                {...exValue, prev, current}
+                {...exValue, prev, current, currName, currItem}
             )
         })
     }
@@ -22,7 +24,7 @@ function Home() {
     return (
         <div className="flex">            
             <Categories Activity={Activity} toggleItem={toggleItem}/>
-            <Feeds />
+            <Feeds currName={Activity.currName} currItem={Activity.currItem} />
         </div>
     )
 }
