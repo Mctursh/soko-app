@@ -2,6 +2,7 @@ import React from "react"
 import Categories from "./Categories/Categories"
 import Feeds from "./Feeds/Feeds"
 import {useState} from "react"
+import Bag from "./Bag/Bag"
 
 
 function Home() {
@@ -25,6 +26,7 @@ function Home() {
         <div className="flex">            
             <Categories Activity={Activity} toggleItem={toggleItem}/>
             <Feeds currName={Activity.currName} currItem={Activity.currItem} />
+            <Bag />
         </div>
     )
 }

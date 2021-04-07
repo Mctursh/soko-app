@@ -216,7 +216,7 @@ h4 i{
   padding: 0.2rem 0.3rem;
   border-radius: 5px;
   font-weight: 200;
-  margin-left: 0.4rem;
+  margin-left: 0.7rem;
 }
 
 .feed-item{
@@ -274,4 +274,35 @@ h4 i{
   font-size: x-small;
   text-decoration: line-through;
   opacity: 0.3;
+}
+
+
+/**************************************BAG STYLING*********************************/
+
+.bag-container{
+  padding: 1.3rem;
+  width: 15%;
+}
+
+.bag-header{
+  margin: 0;
+}
+
+.bag-content{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.bag-content img{
+  width: 60%;
+  margin-top: 2rem;
+}
+
+.bag-content p{
+  margin-top: 0.7rem;
+  font-size: smaller;
+  opacity: 0.6;
 }
