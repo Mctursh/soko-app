@@ -202,6 +202,7 @@ h4 i{
   border-left: solid 1px #DCDCDC;
   border-right: solid 1px #DCDCDC;
   padding-top: 1.3rem;
+  padding-bottom: 3rem;
 }
 
 .feed-active{
@@ -212,8 +213,65 @@ h4 i{
 .feed-active span{
   background: blue;
   color: white;
-  padding: 0.2rem;
+  padding: 0.2rem 0.3rem;
   border-radius: 5px;
   font-weight: 200;
   margin-left: 0.4rem;
+}
+
+.feed-item{
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.feed-item img{
+  width: 16%;
+  border-radius: 10px;
+}
+
+.feed-info{
+  margin-left: 1rem;
+  width: 81%;
+}
+
+.feed-item-name{
+  color: #707070;
+  font-size: 0.8rem;
+}
+
+.feed-item-price{
+  color: #707070;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.feed-addition{
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed-addition button{
+  font-weight: 700;
+  border: 2px solid;
+  padding: 0.2rem 0.7rem;
+  border-radius: 5px;
+  background: inherit;
+  color: #5586D7;
+}
+
+.feed-addition button:hover{
+  background: #5586D7;
+  color: #ffffff;
+  border: 2px solid #5586D7;
+}
+
+.feed-addition button span{
+  margin-right: 0.5rem;
+}
+
+.feed-item-promo-price{
+  font-size: x-small;
+  text-decoration: line-through;
+  opacity: 0.3;
 }
