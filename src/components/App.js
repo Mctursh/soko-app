@@ -1,4 +1,5 @@
 import React from "react"
+import Footer from "./Footer/Footer";
 import Header from "./Header/Header"
 import Home from "./Home/Home";
 
@@ -9,6 +10,7 @@ function App() {
     <>
     <Header />
     <Home />
+    <Footer />
     </>
   );
 }
@@ -36,3 +38,8 @@ export default App;
 //image item uRL https://soko.fra1.digitaloceanspaces.com/TestImg/5e4c0f63-74b3-4a4d-b3f2-d8420dde6c25.jpg
 //image item URL https://soko.fra1.digitaloceanspaces.com/TestImg/8bd67a58-6137-4743-a07a-08a030bc3cfc.jpg
 //image item URL https://soko.fra1.digitaloceanspaces.com/TestImg/92b522c7-4633-4de1-83c4-42fb4505e2a5.jpg
+
+
+//fast delivery icon 
+//buyer protection  
+//customer support  

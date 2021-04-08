@@ -298,11 +298,52 @@ h4 i{
 
 .bag-content img{
   width: 60%;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 .bag-content p{
   margin-top: 0.7rem;
   font-size: smaller;
   opacity: 0.6;
+}
+
+/*******************************FOOTER STYLING*********************************/
+
+.footer-badge-container{
+  display: flex;
+  justify-content: center;
+  padding: 3% 0;
+  background: #2766CC;
+  color: #EBF1FA;
+}
+
+.footer-badge{
+  width: 44%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer-badge-icon{
+  text-align: center;
+}
+
+.footer-badge-icon img{
+  width: 30%;
+}
+
+.special-case{
+  width: 38%;
+}
+
+#fast-delivery{
+  padding-top: 13%;  
+}
+
+#buyer-protection{
+  padding-top: 16%;
+}
+
+#customer-protection{
+  padding-top: 14.5%;
 }
