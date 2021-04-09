@@ -16,9 +16,14 @@ h4 i{
   color: #BCBCBC;
 }
 
+a{
+  text-decoration: none;
+}
+
 button {
   font-family: 'Rubik', sans-serif;
 }
+
 
 .header{
   border-bottom: solid 1px #DCDCDC;
@@ -76,7 +81,7 @@ button {
 }
 
 .target-child{
-  margin: 1.2rem 0;
+  margin: 1rem 0;
 }
 
 .sub-text{
@@ -113,6 +118,15 @@ button {
 .end h4 span{
   display: flex;
   color: #A1A1A1;
+}
+
+.utility{
+  padding: 0 10%;
+  margin-bottom: 1rem;
+}
+
+.utility h3 span i{
+  margin-right: 1.6rem;
 }
 
 
@@ -389,4 +403,138 @@ button {
 
 .contact button span i{
   font-size: 1.1rem;
+}
+
+/**********************************SELECTED FEEDS*********************************/
+
+.selected-feed{
+  display: flex;
+  padding: 2% 10%;
+}
+
+.selected-feed-name{
+  margin: 2% 0;
+}
+.selected-feed-image{
+  width: 36%;
+}
+
+.selected-feed-image img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.selected-feed-info{
+  width: 64%;
+  padding: 0 3%;
+}
+
+.selected-feed-price{
+  display: flex;
+  align-items: center;
+  margin: 4% 0 0;
+}
+
+.discount{
+  display: flex;
+  justify-content: center;
+}
+
+.discount p{
+  font-size: 0.7rem;
+  background: red;
+  color: white;
+  border-radius: 3px;
+  padding: 2% 8%;
+  display: flex;
+  margin-left: 300%;
+  justify-content: center;
+}
+
+.bag-add{
+  width: 9%;
+  display: flex;
+  border: 2px solid #B3C9EC;
+  border-radius: 3px;
+  justify-content: space-between;
+}
+
+.bag-add button{
+  border: none;
+  padding: 0;
+  background: #E9EFF9;
+  color: #4077D2;
+  width: 33.3%;
+}
+
+.bag-add p{
+  padding: 0;
+  width: 33.3%;
+  text-align: center;
+}
+
+.selected-feed-info .feed-item-promo-price{
+  margin-bottom: 4%;
+}
+
+.add-to-bag{
+  padding: 0;
+  background: inherit;
+  font-weight: 500;
+  margin-right: 1%;
+  width: 30%;
+  display: flex;
+  text-align: center;
+}
+
+.add-to-bag a{
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #2A68CD;
+  border-radius: 4px;
+  background: inherit;
+  color: #4078D2;
+}
+
+.add-to-bag a:hover{
+  background: #4078D2;
+  border: 2px solid #2A68CD;
+  color: white;
+}
+
+.buy-now{
+  padding: 0;
+  background: inherit;
+  font-weight: 500;
+  margin-left: 1%;
+  width: 30%;
+  display: flex;
+  text-align: center;
+}
+
+.buy-now a{
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #F8DE4B;
+  border-radius: 4px;
+  background: #F8DE4B;
+  color: #4078D2;
+}
+
+.buy-now a:hover{
+  background: inherit;
+  border: 2px solid #F8DE4B;
+  color: #F8DE4B;
+}
+
+.options{
+  display: flex;
+  height: 11%;
+  margin: 9% 0 0;
 }

@@ -2,6 +2,7 @@ import React from "react"
 import Watermark from "./Watermark"
 import Target from "./Target"
 import SearchBar from "./Search-bar/Search-bar"
+import Utility from "./Header-utility"
 
 
 function Header () {
@@ -9,7 +10,8 @@ function Header () {
         <div className="header">
             <Watermark />
             <Target />
-            <SearchBar />
+            {/* <SearchBar /> */}
+            <Utility />
         </div>
     )
 }

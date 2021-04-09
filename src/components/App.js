@@ -2,16 +2,25 @@ import React from "react"
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header"
 import Home from "./Home/Home";
+import { BrowserRouter as Router , Route, Switch } from "react-router-dom"
+
 
 
 
 function App() {
   return (
-    <>
-    <Header />
-    <Home />
-    <Footer />
-    </>
+    <Router>
+      <>
+        <Header />
+          <Switch>            
+            <Route path="/">
+              <Home />
+              <Footer />
+            </Route> 
+          </Switch>                    
+      </>
+    </Router>
+   
   );
 }
 
