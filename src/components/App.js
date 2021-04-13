@@ -3,18 +3,37 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header"
 import Home from "./Home/Home";
 import { BrowserRouter as Router , Route, Switch } from "react-router-dom"
+import {useState} from "react"
 
 
 
 
 function App() {
+
+  const [HeaderBar, setHeaderBar] = useState({
+    feedUtility: {status: false, category: null},
+    searchBar: true
+  })
+
+  function changeHeaderState(categ) {
+    setHeaderBar((exValue) => {
+      return(
+        {
+          ...exValue,
+          feedUtility: {status: true, category: categ},
+          searchBar: false
+        }
+      )
+    })
+  }
+
   return (
     <Router>
-      <>
-        <Header />
-          <Switch>            
+      <>        
+          <Switch>                
             <Route path="/">
-              <Home />
+              <Header header={HeaderBar} />              
+              <Home changeState={changeHeaderState} />
               <Footer />
             </Route> 
           </Switch>                    

@@ -538,3 +538,51 @@ button {
   height: 11%;
   margin: 9% 0 0;
 }
+
+.selected-feed-circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+}
+
+.selected-feed-circle i{
+  color: #BED1EF;
+  font-size: 0.6rem;
+  padding: 1%;
+
+
+
+}
+
+.selected-feed-circle .active{
+  color: #2766CC;
+}
+
+.related-feed{
+  display: block;
+}
+
+.related-feed-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.related-feed-item-child{
+  max-width: 12%;
+  display: inline-block;
+  margin-right: 1.5%;
+}
+
+.related-feed-image{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.related-feed-name{
+  width: 100%;
+}
+
+.form-outline:visited, .form-outline:active{
+  border: none;
+}

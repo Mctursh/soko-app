@@ -1,16 +1,20 @@
 import React from "react"
 import Categories from "./Categories/Categories"
 import Feeds from "./Feeds/Feeds"
-import {useState} from "react"
+import { useState, useEffect } from "react"
 import Bag from "./Bag/Bag"
-import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import SelectedFeed from "./Selected-feeds/Selected-feed"
 
 
-function Home() {
+function Home(props) {
 
-    const { feed } = useParams()
-
+    // useEffect(() => {
+    //     console.log(match);
+    //     // return () => {
+    //     //     cleanup
+    //     // }
+    // }, [])
 
     const [Activity, setActivity] = useState({
         prev: 1,
@@ -18,6 +22,8 @@ function Home() {
         currName: "Electronics",
         currItem: 12
     })
+
+    
 
     const toggleItem = (prev, current, currName, currItem) => {
         setActivity((exValue) => {
@@ -29,19 +35,18 @@ function Home() {
 
     return (
         <div className="flex">
-            {/* <Router>
+            <Router>
                 <Switch>
-                    <Route path="/feed/electronics">
-                        <SelectedFeed />
-                    </Route>
+                    <Route path="/feed/:category/:id" render={({match}) => ( 
+                        <SelectedFeed match={match} changeState={props.changeState} />
+                    )}/>
                     <Route path="/">
                         <Categories Activity={Activity} toggleItem={toggleItem}/>
                         <Feeds currName={Activity.currName} currItem={Activity.currItem} />
                         <Bag />
                     </Route>
                 </Switch>
-            </Router>                      */}
-            <SelectedFeed />
+            </Router>
         </div>
     )
 }

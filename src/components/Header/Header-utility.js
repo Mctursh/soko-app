@@ -1,10 +1,10 @@
 import React from "react"
 
 
-function Utility() {
+function Utility(props) {
     return(
         <div className="utility">
-            <h3><span><i class="fas fa-chevron-left"></i></span>Electronics</h3>    
+            <h3><span><i class="fas fa-chevron-left"></i></span>{props.category}</h3>    
         </div>        
     )
 }
