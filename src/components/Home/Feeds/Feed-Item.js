@@ -11,7 +11,7 @@ function FeedItem(props) {
                     <p className="feed-item-price" >{props.price}</p>                    
                     <div className="feed-addition">
                         <p className="feed-item-promo-price">{props.promoPrice}</p>
-                        <button> <span><i class="fas fa-plus"></i></span>Add</button>
+                        <button onClick={(() => {props.addToBag(props.id)})}> <span><i class="fas fa-plus"></i></span>Add</button>
                     </div>
                 </div>
             </div>

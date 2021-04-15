@@ -1,28 +1,36 @@
 import React from "react"
 import Feeds from "../Feeds/Dummy-feeds"
-import RelatedFeeds from "./Related-products"
 import { useEffect, useState } from "react"
 
 
 
 function SelectedFeed(props) {
-   const [selected] = Feeds.filter((feed) => feed._id == props.match.params.id)
 
-   const [Selected, setSelected] = useState(selected)
+   const [selected] = Feeds.filter((feed) => feed._id == props.match.params.id)   
+
+   const [Selected, setSelected] = useState(selected) 
    
+   const [ItemPieces, setItemPieces] = useState(1)
+
+   function addToPiece() {
+      setItemPieces(ItemPieces + 1)
+   }
+
+   function removeFromPiece() {
+      setItemPieces(() => {
+         if (ItemPieces == 1) {
+            return ItemPieces
+         } else {
+            return ItemPieces - 1
+         }
+      }) 
+   }
    
+
    useEffect(() => {
-      console.log(props.match);
-      console.log(selected);
-      props.changeState(Selected.category)
-      // console.log("WORKING");
-      // console.log(Feeds);
-      // console.log(Selected);
-      // return () => {
-         
-      // }
+      props.changeState(Selected.category)      
    }, [])
-   // const related = Feeds.filter(item => item.category == selected[0].category)
+   
 
    return (
       <div className="">
@@ -42,36 +50,36 @@ function SelectedFeed(props) {
                   <p className="selected-feed-price"> {Selected.ItemPrice} {Selected.Discount && <span className="discount"><p>{Selected.Discount}</p></span>}</p>
                   {Selected.ItemPromoPrice && <p className="feed-item-promo-price">{Selected.ItemPromoPrice}</p>}
                   <div className="bag-add">
-                     <button><i class="fas fa-minus"></i></button>
-                     <p>1</p>
-                     <button><i class="fas fa-plus"></i></button>
+                     <button onClick={removeFromPiece}><i class="fas fa-minus"></i></button>
+                     <p>{ItemPieces}</p>
+                     <button onClick={addToPiece}><i class="fas fa-plus"></i></button>
                   </div>
                   <div className="options">
                      <div className="add-to-bag"><a href="#" >Add to Bag</a></div>
                      <div className="buy-now"><a href="#">Buy Now</a></div>                
                   </div>
                </div>
-            </div>
-            <div className="selected-feed related-feed">
-               <div className="related-feed-header">
-                  <h4>RELATED PRODUCTS</h4>
-                  <div>
-                     <i className="fas fa-chevron-left"></i>
-                     <i className="fas fa-chevron-right"></i>
-                  </div>
-               </div>
-               <div className="related-feed-item-parent">
-                  {Feeds.map(item => {
-                     return(
-                        <RelatedFeeds key={item._id} feedImageUrl={item.ItemImageUrl} feedName={item.ItemName} />
-                     )
-                  })}
-                                 
-               </div>
-            </div>
+            </div>         
       </div>    
    )
 }
+
+{/* <div className="selected-feed related-feed">
+               <div className="related-feed-header">
+                  <h4>RELATED PRODUCTS</h4>
+                  <div className="flex">
+                     <div id="left"><i className="fas fa-chevron-left" href="#carouselExampleControls" role="button" data-slide="prev"></i></div>
+                     <div id="right"><i className="fas fa-chevron-right" href="#carouselExampleControls" role="button" data-slide="next"></i></div>
+                  </div>
+               </div>            
+            </div> */}
+// {Related.map(item => {                        
+//    return(
+//       <RelatedFeeds key={item._id} feedImageUrl={item.ItemImageUrl} feedName={item.ItemName} />
+//    )
+// })}
+
+
 
 
 export default SelectedFeed

@@ -3,11 +3,11 @@ import UserStatus from "./User-status"
 import Address from "./Target-address"
 
 
-function Target() {
+function Target(props) {
     return (
         <div>
             <Address />
-            <UserStatus />
+            <UserStatus BagAmount={props.BagAmount}/>
         </div>
     )
 }

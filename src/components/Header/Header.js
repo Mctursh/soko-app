@@ -3,19 +3,19 @@ import Watermark from "./Watermark"
 import Target from "./Target"
 import SearchBar from "./Search-bar/Search-bar"
 import Utility from "./Header-utility"
-import { BrowserRouter as Router, Switch, Route, useRouteMatch } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
-function Header (props) {
-
-    let selectedFeedMatch = useRouteMatch("/feed/:category/:id");
+function Header (props) {    
 
     return (
         <div className="header">
             <Watermark />
-            <Target />
-            {props.header.feedUtility.status && <Utility category={props.header.feedUtility.category} />}
-            {props.header.SearchBar && <SearchBar />}
+            <Target BagAmount={props.BagAmount} />
+            <Link to="/">
+              {props.header.feedUtility.status && <Utility goBack={props.goBack} category={props.header.feedUtility.category} />}
+            </Link>
+            {props.header.searchBar && <SearchBar />}
             
             {/* {selectedFeedMatch && <h1>Matches {selectedFeedMatch.match.params.category}</h1>} */}
             {/* <Router>

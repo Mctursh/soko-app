@@ -1,14 +1,51 @@
 import React from "react"
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header"
-import Home from "./Home/Home";
 import { BrowserRouter as Router , Route, Switch } from "react-router-dom"
 import {useState} from "react"
-
+import SelectedFeed from "./Home/Selected-feeds/Selected-feed"
+import Feeds from "./Home/Feeds/Feeds"
+import Categories from "./Home/Categories/Categories"
+import Bag from "./Home/Bag/Bag"
 
 
 
 function App() {
+
+  const [BagAmount, setBagAmount] = useState({
+    isEmpty: true,
+    content:[],
+    totalInCart: 0
+  })
+
+  function addToBag(id, amount = 1) {
+    setBagAmount((exValue) => {
+      let {content, totalInCart} = exValue
+      if (content.length == 0 || content.length == undefined) {
+        content.push({id, amount})
+        totalInCart += 1
+      } else {
+        const status = content.every((curr) => curr.id != id)  
+        if (status) {
+          content.push({id, amount})         
+        } else {
+          content.forEach((item) => {
+            if (item.id == id) {
+              item.amount += 1
+              totalInCart += 1
+            }
+          })
+        }
+      }  
+      return (
+        {
+         isEmpty: false,
+         content,
+         totalInCart 
+        }
+      )  
+    })
+  }
 
   const [HeaderBar, setHeaderBar] = useState({
     feedUtility: {status: false, category: null},
@@ -27,16 +64,55 @@ function App() {
     })
   }
 
+  function goBack() {
+    setHeaderBar((exValue) => {
+      return (
+        {
+          feedUtility: {status: false, category: null},
+          searchBar: true
+        }
+      )
+    })
+  }
+
+  const [Activity, setActivity] = useState({
+    prev: 1,
+    current: 1,
+    currName: "Electronics",
+    currItem: 12
+})
+
+
+
+const toggleItem = (prev, current, currName, currItem) => {
+    setActivity((exValue) => {
+        return (
+            {...exValue, prev, current, currName, currItem}
+        )
+    })
+}
+
   return (
     <Router>
-      <>        
-          <Switch>                
-            <Route path="/">
-              <Header header={HeaderBar} />              
-              <Home changeState={changeHeaderState} />
-              <Footer />
-            </Route> 
-          </Switch>                    
+      <>  <Header header={HeaderBar} BagAmount={BagAmount} goBack={goBack} />  
+          <Switch>  
+            <Route path="/feed/:category/:id" render={({match}) => ( 
+              
+              <SelectedFeed match={match} changeState={changeHeaderState} />
+            )}/>              
+            <Route path="/" render={({match}) => (
+              <>
+              {/* <Header header={HeaderBar} BagAmount={BagAmount} match={match} />  */}
+              <div className="flex">
+                <Categories Activity={Activity} toggleItem={toggleItem}/>
+                <Feeds addToBag={addToBag} currName={Activity.currName} currItem={Activity.currItem} />
+                <Bag BagAmount={BagAmount}/>
+              </div>               
+              {/* <Home changeState={changeHeaderState} addToBag={addToBag} /> */}  
+              </>
+            )}/>
+          </Switch>
+          <Footer />                    
       </>
     </Router>
    

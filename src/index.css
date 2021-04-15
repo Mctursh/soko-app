@@ -161,6 +161,10 @@ button {
   color: #979797;
 }
 
+.category-parent-item-active h4:hover, .category-parent-item-inactive h4:hover{
+  cursor: pointer;
+}
+
 .category h4 span i{
   padding-left: 0.8rem;
 }
@@ -452,6 +456,7 @@ button {
 }
 
 .bag-add{
+  margin-top: 4%;
   width: 9%;
   display: flex;
   border: 2px solid #B3C9EC;
@@ -555,7 +560,7 @@ button {
 
 }
 
-.selected-feed-circle .active{
+.selected-feed-circle .active-selected-image{
   color: #2766CC;
 }
 
@@ -585,4 +590,59 @@ button {
 
 .form-outline:visited, .form-outline:active{
   border: none;
+}
+
+
+
+.bag-content{
+  position: relative;
+}
+
+.bag-content i{
+  color: red;
+  font-size: medium;
+}
+
+.bag-content .value{
+  position: absolute;
+  color: white;
+  font-size: small;
+}
+
+#user-bag-fix{
+  margin-left: 4%;;
+}
+
+.invisible{
+  visibility: hidden;
+}
+
+#left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #E9EFF9;
+}
+
+#right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 5%;
+  background: #2766CC;
+}
+
+#left .fa-chevron-left, #right .fa-chevron-right{
+  color: #ffffff;
+}
+
+.related-feed-header .flex{
+  width: 10%;
+  justify-content: flex-end;
 }
