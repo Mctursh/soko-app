@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/soko-app/static/css/main.67eab3f6.chunk.css",
-    "main.js": "/soko-app/static/js/main.0d402e61.chunk.js",
-    "main.js.map": "/soko-app/static/js/main.0d402e61.chunk.js.map",
+    "main.css": "/soko-app/static/css/main.a9efac6c.chunk.css",
+    "main.js": "/soko-app/static/js/main.cd89b0c7.chunk.js",
+    "main.js.map": "/soko-app/static/js/main.cd89b0c7.chunk.js.map",
     "runtime-main.js": "/soko-app/static/js/runtime-main.2512e146.js",
     "runtime-main.js.map": "/soko-app/static/js/runtime-main.2512e146.js.map",
-    "static/js/2.dffe6c8e.chunk.js": "/soko-app/static/js/2.dffe6c8e.chunk.js",
-    "static/js/2.dffe6c8e.chunk.js.map": "/soko-app/static/js/2.dffe6c8e.chunk.js.map",
+    "static/js/2.65ba88ee.chunk.js": "/soko-app/static/js/2.65ba88ee.chunk.js",
+    "static/js/2.65ba88ee.chunk.js.map": "/soko-app/static/js/2.65ba88ee.chunk.js.map",
     "index.html": "/soko-app/index.html",
-    "static/css/main.67eab3f6.chunk.css.map": "/soko-app/static/css/main.67eab3f6.chunk.css.map",
-    "static/js/2.dffe6c8e.chunk.js.LICENSE.txt": "/soko-app/static/js/2.dffe6c8e.chunk.js.LICENSE.txt"
+    "static/css/main.a9efac6c.chunk.css.map": "/soko-app/static/css/main.a9efac6c.chunk.css.map",
+    "static/js/2.65ba88ee.chunk.js.LICENSE.txt": "/soko-app/static/js/2.65ba88ee.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2512e146.js",
-    "static/js/2.dffe6c8e.chunk.js",
-    "static/css/main.67eab3f6.chunk.css",
-    "static/js/main.0d402e61.chunk.js"
+    "static/js/2.65ba88ee.chunk.js",
+    "static/css/main.a9efac6c.chunk.css",
+    "static/js/main.cd89b0c7.chunk.js"
   ]
 }
