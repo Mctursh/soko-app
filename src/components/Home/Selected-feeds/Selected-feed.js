@@ -10,21 +10,7 @@ function SelectedFeed(props) {
 
    const [Selected, setSelected] = useState(selected) 
    
-   const [ItemPieces, setItemPieces] = useState(1)
-
-   function addToPiece() {
-      setItemPieces(ItemPieces + 1)
-   }
-
-   function removeFromPiece() {
-      setItemPieces(() => {
-         if (ItemPieces == 1) {
-            return ItemPieces
-         } else {
-            return ItemPieces - 1
-         }
-      }) 
-   }
+   
    
 
    useEffect(() => {
@@ -50,12 +36,12 @@ function SelectedFeed(props) {
                   <p className="selected-feed-price"> {Selected.ItemPrice} {Selected.Discount && <span className="discount"><p>{Selected.Discount}</p></span>}</p>
                   {Selected.ItemPromoPrice && <p className="feed-item-promo-price">{Selected.ItemPromoPrice}</p>}
                   <div className="bag-add">
-                     <button onClick={removeFromPiece}><i class="fas fa-minus"></i></button>
-                     <p>{ItemPieces}</p>
-                     <button onClick={addToPiece}><i class="fas fa-plus"></i></button>
+                     <button onClick={props.removeFromPiece}><i class="fas fa-minus"></i></button>
+                     <p>{props.ItemPieces}</p>
+                     <button onClick={props.addToPiece}><i class="fas fa-plus"></i></button>
                   </div>
                   <div className="options">
-                     <div className="add-to-bag"><a href="#" >Add to Bag</a></div>
+                     <div onClick={() => {props.addToBag(Selected.itemNumber, props.ItemPieces)}} className="add-to-bag"><a href="#" >Add to Bag</a></div>
                      <div className="buy-now"><a href="#">Buy Now</a></div>                
                   </div>
                </div>

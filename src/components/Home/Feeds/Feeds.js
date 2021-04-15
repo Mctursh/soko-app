@@ -16,10 +16,8 @@ function Feeds(props) {
                 </div>
                 
                     {DummyFeeds.map((feed) => {
-                        return(
-                            <Link to={`/feed/${feed.category}/${feed._id}`}>
-                                <FeedItem addToBag={props.addToBag} id={feed.itemNumbers} ImageUrl={feed.ItemImageUrl} key={feed._id} name={feed.ItemName} promoPrice={feed.ItemPromoPrice} price={feed.ItemPrice} details={feed.ItemDetaiils} />
-                            </Link>
+                        return(                            
+                            <FeedItem addToBag={props.addToBag} id={feed.itemNumber} ImageUrl={feed.ItemImageUrl} key={feed._id} name={feed.ItemName} promoPrice={feed.ItemPromoPrice} price={feed.ItemPrice} details={feed.ItemDetaiils} />
                         )
                     })}
                                        

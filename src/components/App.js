@@ -18,21 +18,31 @@ function App() {
     totalInCart: 0
   })
 
+  function ClearBag() {
+    setBagAmount({
+      isEmpty: true,
+      content:[],
+      totalInCart: 0
+    })
+  }
+
   function addToBag(id, amount = 1) {
     setBagAmount((exValue) => {
       let {content, totalInCart} = exValue
+      console.log(content);
+      console.log(totalInCart);
       if (content.length == 0 || content.length == undefined) {
         content.push({id, amount})
         totalInCart += 1
       } else {
         const status = content.every((curr) => curr.id != id)  
         if (status) {
-          content.push({id, amount})         
+          content.push({id, amount})
+          totalInCart += 1         
         } else {
           content.forEach((item) => {
             if (item.id == id) {
-              item.amount += 1
-              totalInCart += 1
+              item.amount += 1  
             }
           })
         }
@@ -92,23 +102,38 @@ const toggleItem = (prev, current, currName, currItem) => {
     })
 }
 
+
+const [ItemPieces, setItemPieces] = useState(1)
+
+   function addToPiece() {
+      setItemPieces(ItemPieces + 1)
+   }
+
+   function removeFromPiece() {
+      setItemPieces(() => {
+         if (ItemPieces == 1) {
+            return ItemPieces
+         } else {
+            return ItemPieces - 1
+         }
+      }) 
+   }
+
   return (
     <Router>
       <>  <Header header={HeaderBar} BagAmount={BagAmount} goBack={goBack} />  
           <Switch>  
             <Route path="/feed/:category/:id" render={({match}) => ( 
               
-              <SelectedFeed match={match} changeState={changeHeaderState} />
+              <SelectedFeed match={match} ItemPieces={ItemPieces} addToPiece={addToPiece} removeFromPiece={removeFromPiece} addToBag={addToBag} changeState={changeHeaderState} />
             )}/>              
             <Route path="/" render={({match}) => (
-              <>
-              {/* <Header header={HeaderBar} BagAmount={BagAmount} match={match} />  */}
-              <div className="flex">
-                <Categories Activity={Activity} toggleItem={toggleItem}/>
-                <Feeds addToBag={addToBag} currName={Activity.currName} currItem={Activity.currItem} />
-                <Bag BagAmount={BagAmount}/>
-              </div>               
-              {/* <Home changeState={changeHeaderState} addToBag={addToBag} /> */}  
+              <>              
+                <div className="flex">
+                  <Categories Activity={Activity} toggleItem={toggleItem}/>
+                  <Feeds addToBag={addToBag} currName={Activity.currName} currItem={Activity.currItem} />
+                  <Bag ClearBag={ClearBag} ItemPieces={ItemPieces} addToPiece={addToPiece} removeFromPiece={removeFromPiece} BagAmount={BagAmount}/>
+                </div>    
               </>
             )}/>
           </Switch>
